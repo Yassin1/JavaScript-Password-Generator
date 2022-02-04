@@ -39,3 +39,67 @@ var characters = {
   passwordlength: 128,
 }
 
+function generatePassword() {
+
+  var count = 0;
+
+  if (uppercase == true) {
+    count++;
+  }
+  if (lowercase == true) {
+    count++;
+  }
+
+  if (number == true) {
+    count++;
+  }
+
+  if (symbol == true) {
+    count++;
+  }
+
+  var password = "";
+  var section = parseFloat(passwordLength) / count;
+  section = Math.ceil(section);
+
+
+  if (uppercase == true) {
+
+    for (let i = 0; i < section; i++) {
+      var index = (Math.floor(Math.random() * characters.uppercase.length));
+      password = password + characters.uppercase[index];
+
+    }
+
+  }
+  if (lowercase == true) {
+
+    for (let i = 0; i < section; i++) {
+      var index = (Math.floor(Math.random() * characters.lowercase.length));
+      password = password + characters.lowercase[index];
+    }
+  }
+
+  if (number == true) {
+    for (let i = 0; i < section; i++) {
+      var index = (Math.floor(Math.random() * characters.number.length));
+      password = password + characters.number[index];
+    }
+  }
+
+  if (symbol == true) {
+    for (let i = 0; i < section; i++) {
+      var index = (Math.floor(Math.random() * characters.symbol.length));
+      password = password + characters.symbol[index];
+    }
+  }
+  if (password.length > parseFloat(passwordLength)) {
+
+    password = password.substring(0, parseFloat(passwordLength));
+
+
+  }
+  document.getElementById("password").value = password;
+}
+
+
