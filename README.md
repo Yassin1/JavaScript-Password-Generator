@@ -4,6 +4,7 @@ For homwrork 3 our task is to modify starter code to creat an applications that 
 
 The acceptance criteria are as follows.
 
+``
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
